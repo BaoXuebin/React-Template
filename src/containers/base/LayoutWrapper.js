@@ -7,6 +7,7 @@ import '../styles/LayoutWrapper.css';
 import LayoutMenu from './LayoutMenu';
 import Breadcrumb from '../../components/common/Breadcrumb';
 import { toggleSliderStatus } from '../../redux/actions/CommonAction';
+import Config from '../../config/Config';
 
 const { Header, Sider, Content, Footer } = Layout;
 
@@ -34,6 +35,7 @@ class LayoutWrapper extends Component {
                             type={this.props.collapsed ? 'menu-unfold' : 'menu-fold'}
                             onClick={this.toggle}
                         />
+                        <span style={{ fontSize: '16px', fontWeight: 'bolder' }}>{Config.title}</span>
                     </Header>
                     <div style={{ margin: '12px 16px', padding: 8 }}>
                         <Breadcrumb />
@@ -42,7 +44,7 @@ class LayoutWrapper extends Component {
                         {this.props.children}
                     </Content>
                     <Footer style={{ textAlign: 'center' }}>
-                        ©2018 React-Template
+                        {Config.copyright}
                     </Footer>
                 </Layout>
             </Layout>
