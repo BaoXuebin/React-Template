@@ -1,6 +1,6 @@
 # React-Template
 
-> brach: login-and-auth
+> login-and-auth
 
 提供了一个后台系统开发的基础模板脚手架。
 
@@ -27,4 +27,10 @@
 
 **界面**
 
-![登录页]('')
+登录页
+
+![登录页面](https://raw.githubusercontent.com/BaoXuebin/React-Template/login-and-auth/image/login.png)
+
+管理页面
+
+![管理页面](https://raw.githubusercontent.com/BaoXuebin/React-Template/login-and-auth/image/mana.png)
