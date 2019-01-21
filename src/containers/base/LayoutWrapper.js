@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Layout, Icon } from 'antd';
+import { Layout, Icon, Col, Row, Menu, Dropdown } from 'antd';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
@@ -8,6 +8,7 @@ import LayoutMenu from './LayoutMenu';
 import Breadcrumb from '../../components/common/Breadcrumb';
 import { toggleSliderStatus } from '../../redux/actions/CommonAction';
 import Config from '../../config/Config';
+import { reload } from '../../api/Req';
 
 const { Header, Sider, Content, Footer } = Layout;
 
@@ -16,7 +17,12 @@ class LayoutWrapper extends Component {
         this.props.toggleSliderStatus();
     }
 
+    handleLogout = () => {
+        reload();
+    };
+
     render() {
+        const { user, collapsed } = this.props;
         return (
             <Layout id="layout-container">
                 <Sider
@@ -30,12 +36,31 @@ class LayoutWrapper extends Component {
                 </Sider>
                 <Layout style={{ marginLeft: this.props.collapsed ? 80 : 200, minHeight: '100vh' }}>
                     <Header style={{ background: '#fff', padding: 0 }}>
-                        <Icon
-                            className="trigger"
-                            type={this.props.collapsed ? 'menu-unfold' : 'menu-fold'}
-                            onClick={this.toggle}
-                        />
-                        <span style={{ fontSize: '16px', fontWeight: 'bolder' }}>{Config.title}</span>
+                        <Row>
+                            <Col span={12}>
+                                <Icon
+                                    className="trigger"
+                                    type={collapsed ? 'menu-unfold' : 'menu-fold'}
+                                    onClick={this.toggle}
+                                />
+                                <span style={{ fontSize: '16px', fontWeight: 'bolder' }}>{Config.title}</span>
+                            </Col>
+                            <Col span={12} style={{ textAlign: 'right', paddingRight: '2rem' }}>
+                                {user &&
+                                    <Dropdown overlay={
+                                        <Menu>
+                                            <Menu.Item onClick={this.handleLogout}>
+                                                退出登录
+                                            </Menu.Item>
+                                        </Menu>
+                                    }>
+                                        <span style={{ cursor: "pointer" }}>
+                                            {user.userName} <Icon type="down" />
+                                        </span>
+                                    </Dropdown>
+                                }
+                            </Col>
+                        </Row>
                     </Header>
                     <div style={{ margin: '12px 16px', padding: 8 }}>
                         <Breadcrumb />
@@ -53,7 +78,8 @@ class LayoutWrapper extends Component {
 }
 
 const mapStateToProps = state => ({
-    collapsed: state.common.collapsed
+    collapsed: state.common.collapsed,
+    user: state.common.user
 });
 
 const mapDispatchToProps = dispatch => ({

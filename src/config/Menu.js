@@ -19,11 +19,6 @@ export default [
                 key: '3',
                 content: '子模块2',
                 link: '/module2/sub2'
-            },
-            {
-                key: '4',
-                content: '子模块3',
-                link: '/module2/sub3'
             }
         ]
     },

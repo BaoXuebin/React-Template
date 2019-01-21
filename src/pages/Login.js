@@ -14,6 +14,12 @@ class NormalLoginForm extends Component {
         loading: false
     };
 
+    componentWillMount() {
+        if (this.props.user) {
+            this.props.history.push('/');
+        }
+    }
+
     handleSubmit = (e) => {
         e.preventDefault();
         this.props.form.validateFields((err, values) => {
@@ -22,13 +28,13 @@ class NormalLoginForm extends Component {
                 this.setState({ loading: true }, () => {
                     setTimeout(() => {
                         if (userName === 'Leo' && password === '123456') {
-                            this.props.initUser({ username: 'Leo' });
+                            this.props.initUser({ userName: 'Leo' });
                             this.props.history.push('/');
                         } else {
                             message.error('用户名或密码错误');
                         }
                         this.setState({ loading: false });
-                    }, 2000);
+                    }, 1000);
                 });
             }
         });
