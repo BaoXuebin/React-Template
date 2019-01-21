@@ -1,7 +1,5 @@
-const DefaultConfig = require('./Default-Config');
+const DefaultConfig = require('./Default');
 
 module.exports = Object.assign(DefaultConfig, {
-    // title
-    // copyright
-    // theme
+    theme: '#1DA57A'
 });

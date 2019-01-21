@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import Wrapper from './_Wrapper';
+import Wrapper from '../base/_Wrapper';
 
 class Module1 extends Component {
     render() {
         return (
-            <p>模块三</p>
+            <p>模块一</p>
         );
     }
 }

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import Wrapper from '../_Wrapper';
+import Wrapper from '../../base/_Wrapper';
 
-class Module1 extends Component {
+class Sub1 extends Component {
     render() {
         return (
             <p>子模块一</p>
@@ -9,4 +9,4 @@ class Module1 extends Component {
     }
 }
 
-export default Wrapper(Module1);
+export default Wrapper(Sub1);

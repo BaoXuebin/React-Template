@@ -9,7 +9,17 @@
 - react-router
 - ant-design
 
+实现：
+
+- 页面懒加载
+- 主题色自定义
+- 添加登录页面
+
 使用：
 
-- TODO
+1. clone 本项目
+2. 切换至项目根目录，执行 yarn
+3. yarn start 启动
+4. 在浏览器打开 http://localhost:3000 访问
+
 
