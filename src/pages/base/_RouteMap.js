@@ -17,8 +17,8 @@ const Sub2 = Loadable({
     loader: () => import('../auth/Module2/Sub2'),
     loading: Loader
 });
-const Module3 = Loadable({
-    loader: () => import('../auth/Module3'),
+const Table = Loadable({
+    loader: () => import('../auth/table'),
     loading: Loader
 });
 const Login = Loadable({
@@ -38,7 +38,7 @@ const RouteMap = () => (
             <AuthRoute path="/module1" component={Module1} />
             <AuthRoute path="/module2/sub1" component={Sub1} />
             <AuthRoute path="/module2/sub2" component={Sub2} />
-            <AuthRoute path="/module3" component={Module3} />
+            <AuthRoute path="/table" component={Table} />
             <AuthRoute component={NoFound} />
         </Switch>
         

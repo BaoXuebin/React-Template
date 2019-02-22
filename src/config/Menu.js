@@ -24,8 +24,8 @@ export default [
     },
     {
         key: '5',
-        icon: 'search',
-        content: '模块3',
-        link: '/module3'
+        icon: 'table',
+        content: '表格',
+        link: '/table'
     }
 ];
