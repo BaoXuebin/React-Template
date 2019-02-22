@@ -34,8 +34,8 @@ class LayoutWrapper extends Component {
                     <div className="logo" />
                     <LayoutMenu collapsed={this.props.collapsed} />
                 </Sider>
-                <Layout style={{ marginLeft: this.props.collapsed ? 80 : 200, minHeight: '100vh' }}>
-                    <Header style={{ background: '#fff', padding: 0 }}>
+                <Layout className="layout" style={{ marginLeft: this.props.collapsed ? 80 : 200, minHeight: '100vh' }}>
+                    <Header className="header">
                         <Row>
                             <Col span={12}>
                                 <Icon
@@ -65,7 +65,7 @@ class LayoutWrapper extends Component {
                     <div style={{ margin: '12px 16px', padding: 8 }}>
                         <Breadcrumb />
                     </div>
-                    <Content style={{ margin: '0 16px 24px 16px', padding: '0 24px', minHeight: 280 }}>
+                    <Content className="content">
                         {this.props.children}
                     </Content>
                     <Footer style={{ textAlign: 'center' }}>
